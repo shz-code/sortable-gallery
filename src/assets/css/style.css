@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gallery-item {
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.gallery-item .toggleBox {
+  border-radius: 10px;
+}
+
+.gallery-item:hover .toggleBox {
+  @apply bg-gray-400;
+}
+
+
+
+.gallery-item:hover .img-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.199);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.gallery-item:active .img-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.651);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.overlay {
+  transition: 0.3s ease;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.664);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+
+.featured .img-box {
+  height: 425px;
+  max-width: 600px;
+}
+
+
+.img-box {
+  border-radius: 10px;
+  height: 200px;
+  max-width: 300px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1280px) {
+  .featured .img-box {
+    height: 420px;
+    max-width: 425px;
+  }
+
+  .img-box{
+    height: 200px;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .img-box{
+    height: 200px;
+    max-width: 200px;
+  }
+}
